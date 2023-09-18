@@ -1,0 +1,16 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_security_group.dynamicsg (expand)" [label = "aws_security_group.dynamicsg", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] var.region" [label = "var.region", shape = "note"]
+		"[root] var.sg_ports" [label = "var.sg_ports", shape = "note"]
+		"[root] aws_security_group.dynamicsg (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_security_group.dynamicsg (expand)" -> "[root] var.sg_ports"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group.dynamicsg (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" -> "[root] var.region"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
