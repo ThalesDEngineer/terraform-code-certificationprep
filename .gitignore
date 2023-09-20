@@ -35,4 +35,5 @@ terraform.rc
 
 # Ignore py or zip files
 *.py
+python_scripts/*
 *.zip
